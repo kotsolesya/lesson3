@@ -1,0 +1,24 @@
+<div class="col-md-9">
+  <div class="col-md-3">
+    <%= link_to toggle_status_task_path(task, task.id), method: :patch do %>
+        <i style="opacity: 0.4;" class="fa fa-check"></i>
+    <% end %>
+  </div>
+  <% if task.resolved? %>
+      <div class="col-md-3"><s><%= task.title %></s></div>
+  <% else %>
+      <div class="col-md-3"> <%= task.title %></div>
+  <% end %>
+  <div class="col-md-3"> <%= task.priority %> </div>
+  <div class="col-md-3"> <%= task.status %>   </div>
+
+</div>
+<div class="col-md-3">
+  <%= link_to edit_task_path(task) do %>
+      <i class="fa fa-pencil"></i>
+  <% end %> |
+  <%= link_to task, method: :delete, data: {confirm: "Are you sure?"} do %>
+      <i class="fa fa-trash"></i>
+  <% end %>
+</div>
+<hr style="width: 100%;"/>

@@ -1,0 +1,16 @@
+<div class="col-md-12-offset-2">
+  <p id="notice"><%= notice %></p>
+
+  <h1 class="todo_list_title">ToDo by OK</h1>
+  <div class="row">
+    <% @tasks.each do |task| %>
+        <%= render 'task', task: task %>
+    <% end %>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12 offset-md-2">
+    <%= render 'form' %>
+  </div>
+</div>

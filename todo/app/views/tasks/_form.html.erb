@@ -1,0 +1,29 @@
+<%= form_for @task ||= Task.new, html: {class: "form-inline"} do |f| %>
+    <% if @task.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+          <button aria-hidden="true" class="close" data-dismiss="alert" type="button">&times;</button>
+          <h4>
+            <%= "#{pluralize(@task.errors.count, "error")} prohibited this user from being saved:" %>
+          </h4>
+          <ul>
+            <% @task.errors.full_messages.each do |msg| %>
+                <li>
+                  <%= msg %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.text_field :title, {placeholder: "Create your new task", class: 'form-control'} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :priority %>
+      <%= f.number_field :priority, min: 0, max: 5, value: 1, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :status %>
+      <%= f.select :status, options_for_select(Task.statuses.keys), {}, {class: 'form-control'} %>
+    </div>
+    <%= f.submit class: "btn btn-default" %>
+<% end %>
