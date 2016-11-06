@@ -1,3 +1,4 @@
+<div class="olesya-form">
 <%= form_for @task ||= Task.new, html: {class: "form-inline"} do |f| %>
     <% if @task.errors.any? %>
         <div class="alert alert-danger alert-dismissable">
@@ -27,3 +28,4 @@
     </div>
     <%= f.submit class: "btn btn-default" %>
 <% end %>
+</div>

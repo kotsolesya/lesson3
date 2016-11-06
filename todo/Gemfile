@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'font-awesome-rails'
 gem 'bootstrap'
 gem 'tether-rails'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 group :development, :test do
   gem 'pry-rails'

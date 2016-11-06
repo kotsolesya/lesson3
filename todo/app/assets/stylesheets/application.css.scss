@@ -17,7 +17,7 @@
 @import "font-awesome";
 
 $white_opaque: rgba(250, 250, 250, .3);
-$dark: #9401c4;
+$dark: #5c0182;
 
 html {
   height: 100%;
@@ -44,11 +44,11 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 2.5rem;
-  color: #9401c4;
+  color: $dark;
   margin: 0;
   a {
     text-decoration: none;
-    color: #9401c4;
+    color: $dark;
     transition: all .4s ease-in-out;
     &:hover {
       opacity: 0.4;
@@ -57,7 +57,7 @@ body {
 }
 
 i {
-  color: #9401c4;
+  color: $dark;
   transition: all .4s ease-in-out;
   &:hover {
     color: #13c422;
@@ -66,4 +66,15 @@ i {
 
 label {
   color: $dark;
+}
+
+.page-link {
+  color: $dark;
+}
+.page-item.active .page-link {
+  background-color: $dark;
+  border-color: $dark;
+}
+.olesya-form{
+  margin:  10px;
 }

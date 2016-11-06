@@ -2,6 +2,8 @@
   <p id="notice"><%= notice %></p>
 
   <h1 class="todo_list_title">ToDo by OK</h1>
+  <center><%= paginate @tasks, theme: 'twitter-bootstrap-4',
+                       pagination_class: "pagination-sm" %></center>
   <div class="row">
     <% @tasks.each do |task| %>
         <%= render 'task', task: task %>

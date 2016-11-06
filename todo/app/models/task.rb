@@ -5,4 +5,6 @@ class Task < ApplicationRecord
   validates :status,  presence: true
   enum status: [ :open, :closed, :resolved ]
 
+  paginates_per  3
+
 end
